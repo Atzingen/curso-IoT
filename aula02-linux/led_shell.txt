@@ -1,0 +1,6 @@
+ls /sys/class/gpio
+echo 39 > /sys/class/gpio/export
+ls /sys/class/gpio
+echo out > /sys/class/gpio/gpio39/direction
+echo 1 > /sys/class/gpio/gpio39/value
+echo 0 > /sys/class/gpio/gpio39/value
