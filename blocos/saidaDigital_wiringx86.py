@@ -1,3 +1,4 @@
+# coding: latin1
 '''
 Baseado no exemplo disponibilizado pela biblioteca
 Exemplo de manipulação de GPIO usando a bilbioteca wiringx86
@@ -16,7 +17,7 @@ numero_pino = 13
 pinos.pinMode(numero_pino, pinos.OUTPUT)
 
 try:
-    while(True):
+    while True:
         pinos.digitalWrite(numero_pino, pinos.HIGH)
         time.sleep(1)
         pinos.digitalWrite(numero_pino, pinos.LOW)
