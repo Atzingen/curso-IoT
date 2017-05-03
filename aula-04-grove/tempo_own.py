@@ -16,9 +16,4 @@ w = observation.get_weather()
 #  w.get_temperature('celsius') -> {'temp_max': 10.5, 'temp': 9.7, 'temp_min': 9.0}
 print 'vento: velocidade = {}, direcao = {}'.format(w.get_wind()['speed'], w.get_wind()['deg'] )
 print 'umidade do ar: ', w.get_humidity()
-print 'temperatura: de {} a {}'.format(w.get_temperature('celsius')['temp_max'], w.get_temperature('celsius')['temp_min'] )
-
-##################### Locais disponiveis por posicao  #########################
-observation_list = owm.weather_around_coords(-22.57, -43.12)
-for item in  observation_list:
-    print item
+print 'temperatura: ', w.get_temperature('celsius')['temp_max']
