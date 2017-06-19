@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      Topico
+    </div>
+    <div class="col-sm-4">
+      valor
+    </div>
+    <div class="col-sm-4">
+      ---
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="Topico">
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="valor">
+    </div>
+    <div class="col-sm-4">
+      <button type="button" id="bt_texto" class="btn btn-info">envia</button>
+    </div>
+  </div>
+</div>
+
+<script type=text/javascript>
+  $(function() {
+    $('#bt_texto').bind('click', function() {
+      $.getJSON('/', {
+        topico: $("#Topico").val(),
+        valor: $("#valor").val()
+      });
+    });
+  });
+</script>
+
+
+
+{% endblock %}
