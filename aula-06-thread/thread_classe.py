@@ -26,7 +26,8 @@ led07 = threadLed('led07', 1.7)
 
 led13.start()
 led07.start()
-time.sleep(10)
+time.sleep(5)
 led13.parar()
 time.sleep(10)
 led07.parar()
+print "fim do programa"

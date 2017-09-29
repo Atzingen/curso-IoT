@@ -2,8 +2,10 @@
 '''
 Baseado no exemplo disponibilizado pela biblioteca upm/mraa da intel
 para leitura do sensor de temperatura.
+O sensor de temperatura é analógico.
 
 Gustavo Voltani von Atzingen 15/04/2017
+Updated: 28/09/2017
 
 Curso IoT 2017 - IFSP Piracicaba
 '''

@@ -3,7 +3,7 @@
 
 <ul class="list-group">
     {% for valor in valores %}
-        <li class="list-group-item"> {{valor}} </li>
+        <li class="list-group-item text-center"> Sensor {{ loop.index0 + 1 }} : {{valor}} </li>
     {% endfor %}
 </ul>
 

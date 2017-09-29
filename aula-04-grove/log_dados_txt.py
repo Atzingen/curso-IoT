@@ -2,8 +2,11 @@
 '''
 Baseado no exemplo disponibilizado pela biblioteca
 Exemplo de escrita dos dados da leitura do conversor ADC
+em uma arquivo txt. Procedimento de leitura ADC igual ao exemplo
+"leitura_analogica.py".
 
 Gustavo Voltani von Atzingen 15/04/2017
+Updated: 28/09/2017
 
 Curso IoT 2017 - IFSP Piracicaba
 '''
@@ -14,6 +17,8 @@ pinos = GPIO(debug=False)
 pinos.pinMode(14, pinos.ANALOG_INPUT)
 
 while 1:
-    valor = pinos.analogRead(14)
-    print valor
+    with open('dados.txt','a') as f:
+        valor = pinos.analogRead(14)
+        f.write(str(valor) + '\n')
+    print str(valor) + '\n'
     time.sleep(1)
