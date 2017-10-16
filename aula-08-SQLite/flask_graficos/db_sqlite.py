@@ -26,7 +26,7 @@ def retorna_dados_sensores(quantidade=None):
         cursor.execute('''SELECT * FROM sensores ORDER BY datetime(tempo) DESC LIMIT ?''',
                        (quantidade,))
     conect.commit()
-    return scipy.array(cursor.fetchall())
+    return cursor.fetchall()
 
 def adiciona_dado_sensores(temperatura, umidade, nome):
 	try:

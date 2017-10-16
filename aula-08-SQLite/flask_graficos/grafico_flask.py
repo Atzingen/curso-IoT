@@ -4,8 +4,8 @@ import db_sqlite
 
 @app.route("/")
 def hello():
-    valores = db_sqlite.retorna_dados_sensores(50)
-    print valores
+    # valores = db_sqlite.retorna_dados_sensores(50)
+    # print valores
     return render_template("helloBootstrap.html")
 
 @app.route("/sensores")
