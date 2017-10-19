@@ -25,7 +25,6 @@ def retorna_dados_sensores(quantidade=None):
     else:
         cursor.execute('''SELECT * FROM sensores ORDER BY datetime(tempo) DESC LIMIT ?''',
                        (quantidade,))
-    conect.commit()
     return cursor.fetchall()
 
 def adiciona_dado_sensores(temperatura, umidade, nome):
@@ -41,5 +40,6 @@ def adiciona_dado_sensores(temperatura, umidade, nome):
 			return True
 		else:
 			return False
-	except:
+	except Exception as e:
+		print e
 		return False

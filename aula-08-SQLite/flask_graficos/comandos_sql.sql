@@ -1,9 +1,10 @@
 CREATE TABLE IF NOT EXISTS sensores(id INTEGER PRIMARY KEY,
-                                    temperatura REAL, umidade REAL, nome TEXT,
+                                    nome TEXT NOT NULL,
+                                    temperatura REAL, umidade REAL,
                                     tempo TIMESTAMP DEFAULT (DATETIME('now')))
 
 INSERT INTO sensores(temperatura, umidade, nome)
-            VALUES(temperatura, umidade, nome)
+            VALUES(27.5, 71.0, 'TESTE1')
 
 SELECT * FROM sensores ORDER BY datetime(tempo) ASC
 
