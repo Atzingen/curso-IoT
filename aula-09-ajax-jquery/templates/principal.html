@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="jumbotron text-center" style="background:#5bc0de!important">
+        <h1> Flask no Galileo e kit Grove </h1>
+        <p>
+            Exemple de controle de atuadores e leitura de sensores
+            utilizando flask e as bibliotecas upm e wiringx86.
+        </p>
+        <p>
+            A atualização
+            dos valores dos sensores é feita via ajax com jquery e os dados
+            salvos em um banco sqlite.
+        </p>
+    </div>
+<div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+      <img src="static/img/iot.jpg" alt="Chania">
+      <div class="carousel-caption">
+        <h3>IoT</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="static/img/galileo.jpg" alt="Flower">
+      <div class="carousel-caption">
+        <h3>Galileo</h3>
+        <p>Placa de desenvolvimento Intel Galileo Gen 1.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="static/img/grove.jpg" alt="Flower">
+      <div class="carousel-caption">
+        <h3>Kit grove</h3>
+        <p>Foto do kit grove em funcionamento.</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+    </a>
+</div>
+
+{% endblock %}

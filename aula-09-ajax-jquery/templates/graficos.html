@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="container-grafico1"></div>
+
+
+<script>
+Highcharts.chart('container-grafico1', {
+    title: {
+        text: 'Exemplo de uso do Highcharts com Flask'
+    },
+    subtitle: {
+        text: 'dados dos sensores salvos no sqlite'
+    },
+    xAxis: {
+        type: 'datetime'
+    },
+    yAxis: {
+        title: {
+            text: 'Temperatura e Umidade'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+    plotOptions: {
+        series: {
+            pointStart: 0
+        }
+    },
+    series: [{
+        name: 'temperatura',
+        data: [
+            {% for i in valores %}
+                {{i[1]|safe}} ,
+            {% endfor %}
+        ]
+    }, {name: 'umidade',
+    data:[
+        {% for i in valores %}
+            {{i[2]|safe}} ,
+        {% endfor %}
+    ]}]
+});
+</script>
+
+{% endblock %}

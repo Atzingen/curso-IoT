@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+      Controle do led
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary btn-block" id="bt_led_on">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    On
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-block btn-danger" id="bt_led_off">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    Off
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br /><br />
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+      Controle do servo
+    </div>
+    <div class="panel-body">
+        <label for="basic-url">Digite o valor para o servo (0 a 180)</label>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="button" id="bt_servo_update">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    update
+                </button>
+            </span>
+            <input type="text" class="form-control" placeholder="valor em graus" id="input_servo">
+        </div>
+    </div>
+</div>
+
+<br /><br />
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+      Controle LCD
+    </div>
+    <div class="panel-body">
+        A ser implementado
+    </div>
+</div>
+
+<script>
+    $("#bt_servo_update").click(function(){
+        var valor = $("#input_servo").val();
+        $.get( "/servo/" + valor, function( data ) {
+            valor;
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt_led_on").click(function(){
+        $.get( "/led/1", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+    $("#bt_led_off").click(function(){
+        $.get( "/led/0", function( data ) {
+            console.log( "Load was performed." );
+        });
+    })
+</script>
+
+
+{% endblock %}
